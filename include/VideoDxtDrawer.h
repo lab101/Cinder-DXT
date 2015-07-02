@@ -38,6 +38,9 @@
        < 0 = We return < 0 on error. 
 
  */
+
+#define DXT_PLAYER_USE_CINDER
+
 #ifndef POLY_VIDEO_DXT_DRAWER_H
 #define POLY_VIDEO_DXT_DRAWER_H
 
