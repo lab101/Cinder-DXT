@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<template name="DXT player: Basic sample" parent="org.libcinder.apptemplates.basicopengl">
+	<source replaceContents="true" replaceName="true">src/_TBOX_PREFIX_App.cpp</source>
+	<asset>assets/video.dxt5</asset>
+</template>
+</cinder>
