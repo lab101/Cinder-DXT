@@ -98,18 +98,18 @@ namespace poly {
     uint32_t magic;
 
     if (true == ifs.is_open()) {
-      SX_ERROR("Already loaded %s, call shutdown if you want to reload.", filepath.c_str());
+      CI_LOG_E("Already loaded %s, call shutdown if you want to reload.", filepath.c_str());
       return -1;
     }
 
     if (0 == filepath.size()) {
-      SX_ERROR("Invalid filepath; size is 0.");
+      CI_LOG_E("Invalid filepath; size is 0.");
       return -2;
     }
   
     ifs.open(filepath.c_str(), std::ios::binary | std::ios::in);
     if (!ifs.is_open()) {
-      SX_ERROR("Failed to open: %s", filepath.c_str());
+      CI_LOG_E("Failed to open: %s", filepath.c_str());
       return -6;
     }
 
@@ -119,61 +119,61 @@ namespace poly {
 
     if (0 == filesize) {
       ifs.close();
-      SX_ERROR("File size is 0 (%s).", filepath.c_str());
+      CI_LOG_E("File size is 0 (%s).", filepath.c_str());
       return -7;
     }
     
     /* Read the header. */
     if (0 != readU32(magic)) {
-      SX_ERROR("Failed to read the magic.");
+		CI_LOG_E("Failed to read the magic.");
       ifs.close();
       return -8;
     }
     
     if (0xCAFEBABE != magic) {
       ifs.close();
-      SX_ERROR("Failed to read the magic cookie. Did you create the file using VideoDxtCreator?");
+	  CI_LOG_E("Failed to read the magic cookie. Did you create the file using VideoDxtCreator?");
       return -8;
     }
 
     if (0 != readU32(version)) {
-      SX_ERROR("Failed to read the version.");
+		CI_LOG_E("Failed to read the version.");
       ifs.close();
       return -9;
     }
     
     if (1 != version) {
       ifs.close();
-      SX_ERROR("The version of the DXT file is not supported by the player. Read version: %d", version);
+	  CI_LOG_E("The version of the DXT file is not supported by the player. Read version: %d", version);
       return -9;
     }
 
     if (0 != readU32(video_width)) {
-      SX_ERROR("Failed to read the video width.");
+		CI_LOG_E("Failed to read the video width.");
       ifs.close();
       return -10;
     }
     
     if (0 != readU32(video_height)) {
-      SX_ERROR("Failed to read the video height.");
+		CI_LOG_E("Failed to read the video height.");
       ifs.close();
       return -11;
     }
     
     if (0 != readU32(num_frames)) {
-      SX_ERROR("Failed to read the number of frames.");
+		CI_LOG_E("Failed to read the number of frames.");
       ifs.close();
       return -12;
     }
 
     if (0 == video_width || 4096 < video_width) {
-      SX_ERROR("Video width is invalid. Either 0 or bigger then 4096 what we don't support yet. Video width: %u", video_width);
+		CI_LOG_E("Video width is invalid. Either 0 or bigger then 4096 what we don't support yet. Video width: %u", video_width);
       ifs.close();
       return -13;
     }
 
     if (0 == video_height || 4096 < video_height) {
-      SX_ERROR("Video height is invalid. either 0 or bigger then 4096 what we don't support yet. Video height: %u", video_height);
+		CI_LOG_E("Video height is invalid. either 0 or bigger then 4096 what we don't support yet. Video height: %u", video_height);
       ifs.close();
       return -14;
     }
@@ -197,7 +197,7 @@ namespace poly {
 
 
     if (filesize <= 20 || ((filesize - 20) < (bytes_per_frame * num_frames)) ) {
-      SX_ERROR("Invalid filesize.");
+		CI_LOG_E("Invalid filesize.");
       ifs.close();
       return -15;
     }
@@ -205,14 +205,14 @@ namespace poly {
     /* Allocate the frame buffer. */
     frame_buffer = (unsigned char*)malloc(bytes_per_frame);
     if (NULL == frame_buffer) {
-      SX_ERROR("Failed to allocate the frame buffer.");
+		CI_LOG_E("Failed to allocate the frame buffer.");
       ifs.close();
       return -8;
     }
   
     /* Read the first frame */
     if (0 != readCurrentFrame()) {
-      SX_ERROR("Failed to read the first frame.");
+		CI_LOG_E("Failed to read the first frame.");
       ifs.close();
       return -17;
     }
@@ -249,13 +249,13 @@ namespace poly {
 
 #if !defined(NDEBUG)
     if (!ifs.is_open()) {
-      SX_ERROR("Trying to play, but the file stream is not opened. Did you call init()?");
+      CI_LOG_E("Trying to play, but the file stream is not opened. Did you call init()?");
       return;
     }
 #endif
   
     if (0 == isPlaying()) {
-      SX_ERROR("Already playing.");
+		CI_LOG_E("Already playing.");
       return;
     }
 
@@ -272,13 +272,13 @@ namespace poly {
   void VideoDxtPlayer::pause() {
 
     if (0 != isPlaying()) {
-      SX_ERROR("Cannot pause because we're not playing.");
+		CI_LOG_E("Cannot pause because we're not playing.");
       return;
     }
 
     if (0 == isPaused()) {
 #if !defined(NDEBUG)
-      SX_VERBOSE("Calling pause() on a video that's already paused.");
+      CI_LOG_D("Calling pause() on a video that's already paused.");
 #endif
       return;
     }
@@ -292,7 +292,7 @@ namespace poly {
   void VideoDxtPlayer::stop() {
 
     if (0 != isPlaying() && 0 != isPaused()) {
-      SX_ERROR("Cannot stop because we're not paying or paused.");
+		CI_LOG_E("Cannot stop because we're not paying or paused.");
       return;
     }
 
@@ -321,7 +321,7 @@ namespace poly {
 
 #if !defined(NDEBUG)
     if (!ifs.is_open()) {
-      SX_ERROR("Trying to update, but the file stream is not opened. Did you call init()?");
+		CI_LOG_E("Trying to update, but the file stream is not opened. Did you call init()?");
       return -1;
     }
 #endif
@@ -360,7 +360,7 @@ namespace poly {
         time_started = ns();
       }
       else {
-        SX_ERROR("Unhandled play mode.");
+		  CI_LOG_E("Unhandled play mode.");
       }
       return 0;
     }

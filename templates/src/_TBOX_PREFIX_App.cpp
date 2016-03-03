@@ -1,13 +1,16 @@
-#include "cinder/app/AppNative.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/gl.h"
+#include "cinder/app/RendererGl.h"
+#include "cinder/Utilities.h"
 
 #include "VideoDxtDrawer.h"
+
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class _TBOX_PREFIX_App : public AppNative {
+class _TBOX_PREFIX_App : public App {
   public:
 	void setup();
 	void mouseDown( MouseEvent event );	
@@ -37,19 +40,20 @@ void _TBOX_PREFIX_App::mouseDown( MouseEvent event )
 
 void _TBOX_PREFIX_App::update()
 {
-    // could be done in a thread.
-    player.worker();
-    // uploading should be done on the main thread.
-    player.uploadTexture();
-
+	player.update();
 }
 
 void _TBOX_PREFIX_App::draw()
 {
 	// clear out the window with black
-	gl::clear( Color( 0, 0, 0 ) );
-    player.draw();
+	gl::clear( Color( 1, 0, 0 ) );
+
+
+    player.draw(vec2(0,0));
+//	player.alpha = 0.5;
+
+	gl::drawString("video size: " + toString(player.getWidth()) + " x " + toString(player.getHeight()) + " current frame " + toString(player.player.curr_frame) ,vec2(10,20));
 
 }
 
-CINDER_APP_NATIVE( _TBOX_PREFIX_App, RendererGl )
+CINDER_APP( _TBOX_PREFIX_App, RendererGl )

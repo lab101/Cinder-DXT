@@ -19,8 +19,8 @@
 #include <vector>
 #include <fstream>
 #include <stdint.h>
-#include "Log.h"
 #include "VideoDxtPlayerListener.h"
+#include "cinder\log.h"
 
 using namespace poly;
 
@@ -102,7 +102,7 @@ namespace poly {
   inline void VideoDxtPlayer::addVideoPlayerListener(VideoDxtPlayerListener* lis) {
 
     if (NULL == lis) {
-      SX_ERROR("Listener is NULL.");
+      CI_LOG_E("Listener is NULL.");
       return;
     }
 
@@ -146,13 +146,13 @@ namespace poly {
     ifs.seekg(byte_offset, ifs.beg);
 
     if (!ifs) {
-      SX_ERROR("Failed to seek to %lu", byte_offset);
+		CI_LOG_E("Failed to seek to %lu", byte_offset);
       return -1;
     }
 
     ifs.read((char*)frame_buffer, bytes_per_frame); /* from HDD this takes about 4ms */
     if (!ifs) {
-      SX_ERROR("Failed to read a frame! Not supposed to happen!.");
+		CI_LOG_E("Failed to read a frame! Not supposed to happen!.");
       return -2;
     }
 
@@ -176,7 +176,7 @@ namespace poly {
     uint8_t* p = (uint8_t*)&result;
 
     if (false == ifs.is_open()) {
-      SX_ERROR("Cannot read because the file hasn't been opened.\n");
+		CI_LOG_E("Cannot read because the file hasn't been opened.\n");
       return -1;
     }
     

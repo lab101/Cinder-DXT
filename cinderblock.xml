@@ -2,21 +2,19 @@
 <cinder>
 <block
 	name="DXT player"
-	id="nl.cowlumbus.warping"
-	author="Diederick Huijbers, Kris Temmerman, Kris Meeusen "
+	id="be.lab101.DXT_player"
+	author="Diederick Huijbers, Kris Meeusen "
 	license="GPL, Commercial"
 	summary="DXT player library for Cinder"
 	url="https://github.com/lab101/Cinder-DXT"
-	git="git://github.com/paulhoux/Cinder-DXT.git"
+	git="git://github.com/lab101/Cinder-DXT.git"
 	>
 	<supports os="macosx" />
 	<supports os="msw" />
 	<includePath>include</includePath>
-	<header>include/Log.h</header>
 	<header>include/VideoDxtDrawer.h</header>
 	<header>include/VideoDxtPlayer.h</header>
 	<header>include/VideoDxtPlayerListener.h</header>
-	<source>src/Log.cpp</source>
 	<source>src/VideoDxtDrawer.cpp</source>
 	<source>src/VideoDxtPlayer.cpp</source>
 </block>
