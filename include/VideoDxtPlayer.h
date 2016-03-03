@@ -20,7 +20,7 @@
 #include <fstream>
 #include <stdint.h>
 #include "VideoDxtPlayerListener.h"
-#include "cinder\log.h"
+#include "cinder/log.h"
 
 using namespace poly;
 
@@ -146,7 +146,7 @@ namespace poly {
     ifs.seekg(byte_offset, ifs.beg);
 
     if (!ifs) {
-		CI_LOG_E("Failed to seek to %lu", byte_offset);
+        CI_LOG_E("Failed to seek to " << byte_offset);
       return -1;
     }
 

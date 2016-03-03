@@ -98,7 +98,7 @@ namespace poly {
     uint32_t magic;
 
     if (true == ifs.is_open()) {
-      CI_LOG_E("Already loaded %s, call shutdown if you want to reload.", filepath.c_str());
+      CI_LOG_E("Already loaded " << filepath.c_str() << ", call shutdown if you want to reload.");
       return -1;
     }
 
@@ -109,7 +109,7 @@ namespace poly {
   
     ifs.open(filepath.c_str(), std::ios::binary | std::ios::in);
     if (!ifs.is_open()) {
-      CI_LOG_E("Failed to open: %s", filepath.c_str());
+      CI_LOG_E("Failed to open: " << filepath.c_str());
       return -6;
     }
 
@@ -119,7 +119,7 @@ namespace poly {
 
     if (0 == filesize) {
       ifs.close();
-      CI_LOG_E("File size is 0 (%s).", filepath.c_str());
+      CI_LOG_E("File size is 0 (%s)." << filepath.c_str());
       return -7;
     }
     
@@ -144,7 +144,7 @@ namespace poly {
     
     if (1 != version) {
       ifs.close();
-	  CI_LOG_E("The version of the DXT file is not supported by the player. Read version: %d", version);
+	  CI_LOG_E("The version of the DXT file is not supported by the player. Read version: " << version);
       return -9;
     }
 
@@ -167,13 +167,13 @@ namespace poly {
     }
 
     if (0 == video_width || 4096 < video_width) {
-		CI_LOG_E("Video width is invalid. Either 0 or bigger then 4096 what we don't support yet. Video width: %u", video_width);
+		CI_LOG_E("Video width is invalid. Either 0 or bigger then 4096 what we don't support yet. Video width: " <<video_width);
       ifs.close();
       return -13;
     }
 
     if (0 == video_height || 4096 < video_height) {
-		CI_LOG_E("Video height is invalid. either 0 or bigger then 4096 what we don't support yet. Video height: %u", video_height);
+		CI_LOG_E("Video height is invalid. either 0 or bigger then 4096 what we don't support yet. Video height: " << video_height);
       ifs.close();
       return -14;
     }
