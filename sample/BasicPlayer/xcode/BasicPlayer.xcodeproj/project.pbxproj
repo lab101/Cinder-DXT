@@ -16,17 +16,14 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		500661671CA2F57300244356 /* shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 500661651CA2F57300244356 /* shader.frag */; };
+		500661681CA2F57300244356 /* shader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 500661661CA2F57300244356 /* shader.vert */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		5F8B5A3E95074BBBB6331C5E /* VideoDxtPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC189DF2D2B94582B08E96DB /* VideoDxtPlayer.cpp */; };
 		7C0ABD930BA841DC88C48007 /* VideoDxtDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9559EE9311C248B19AD55AC3 /* VideoDxtDrawer.cpp */; };
-		721F95DDAC4440AD87AF20B3 /* VideoDxtPlayerListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 2086DBB814CE4973B2B397A1 /* VideoDxtPlayerListener.h */; };
-		CD0D78D5B6E242D980FAD027 /* VideoDxtPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB209C1D87824E6CBA48ADAD /* VideoDxtPlayer.h */; };
-		1748C3A8DA7544DC96DB8A25 /* VideoDxtDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5256C290C3D04096828DC2A2 /* VideoDxtDrawer.h */; };
-		F4FD6281A2734BBCA44886F7 /* BasicPlayerApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EE94174C9264B2FBB380F17 /* BasicPlayerApp.cpp */; };
-		3E99A0A8DB3E4635BBAA4DB7 /* BasicPlayer_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 10C527DC4A3F4DC98FEF2444 /* BasicPlayer_Prefix.pch */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		8D3D1DB1A1624D8EAE8F904E /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 804891EF836149FD9FD37241 /* CinderApp.icns */; };
-		3862A4CF7F7845F6A738A653 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = E3BBFD2B96F441A9AF355BED /* Resources.h */; };
+		F4FD6281A2734BBCA44886F7 /* BasicPlayerApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7EE94174C9264B2FBB380F17 /* BasicPlayerApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,20 +37,22 @@
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		10C527DC4A3F4DC98FEF2444 /* BasicPlayer_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = BasicPlayer_Prefix.pch; sourceTree = "<group>"; };
+		2086DBB814CE4973B2B397A1 /* VideoDxtPlayerListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoDxtPlayerListener.h; path = ../../../include/VideoDxtPlayerListener.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		500661651CA2F57300244356 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shader.frag; path = ../assets/shader.frag; sourceTree = "<group>"; };
+		500661661CA2F57300244356 /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shader.vert; path = ../assets/shader.vert; sourceTree = "<group>"; };
+		5256C290C3D04096828DC2A2 /* VideoDxtDrawer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoDxtDrawer.h; path = ../../../include/VideoDxtDrawer.h; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		7D85EFA1128C487DA2FCE0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EE94174C9264B2FBB380F17 /* BasicPlayerApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = BasicPlayerApp.cpp; path = ../src/BasicPlayerApp.cpp; sourceTree = "<group>"; };
+		804891EF836149FD9FD37241 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* BasicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3BBFD2B96F441A9AF355BED /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		804891EF836149FD9FD37241 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		7D85EFA1128C487DA2FCE0E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		10C527DC4A3F4DC98FEF2444 /* BasicPlayer_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = BasicPlayer_Prefix.pch; sourceTree = "<group>"; name = BasicPlayer_Prefix.pch; };
-		7EE94174C9264B2FBB380F17 /* BasicPlayerApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/BasicPlayerApp.cpp; sourceTree = "<group>"; name = BasicPlayerApp.cpp; };
-		5256C290C3D04096828DC2A2 /* VideoDxtDrawer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../include/VideoDxtDrawer.h; sourceTree = "<group>"; name = VideoDxtDrawer.h; };
-		AB209C1D87824E6CBA48ADAD /* VideoDxtPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../include/VideoDxtPlayer.h; sourceTree = "<group>"; name = VideoDxtPlayer.h; };
-		2086DBB814CE4973B2B397A1 /* VideoDxtPlayerListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../../include/VideoDxtPlayerListener.h; sourceTree = "<group>"; name = VideoDxtPlayerListener.h; };
-		9559EE9311C248B19AD55AC3 /* VideoDxtDrawer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/VideoDxtDrawer.cpp; sourceTree = "<group>"; name = VideoDxtDrawer.cpp; };
-		BC189DF2D2B94582B08E96DB /* VideoDxtPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../../../src/VideoDxtPlayer.cpp; sourceTree = "<group>"; name = VideoDxtPlayer.cpp; };
+		9559EE9311C248B19AD55AC3 /* VideoDxtDrawer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = VideoDxtDrawer.cpp; path = ../../../src/VideoDxtDrawer.cpp; sourceTree = "<group>"; };
+		AB209C1D87824E6CBA48ADAD /* VideoDxtPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoDxtPlayer.h; path = ../../../include/VideoDxtPlayer.h; sourceTree = "<group>"; };
+		BC189DF2D2B94582B08E96DB /* VideoDxtPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = VideoDxtPlayer.cpp; path = ../../../src/VideoDxtPlayer.cpp; sourceTree = "<group>"; };
+		E3BBFD2B96F441A9AF355BED /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				500661651CA2F57300244356 /* shader.frag */,
+				500661661CA2F57300244356 /* shader.vert */,
+				3B0A8ED78616483DA0B70B19 /* DXT player */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,42 +143,6 @@
 			name = BasicPlayer;
 			sourceTree = "<group>";
 		};
-		C00ECF9D7F834CE9A25009F9 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				5256C290C3D04096828DC2A2 /* VideoDxtDrawer.h */,
-				AB209C1D87824E6CBA48ADAD /* VideoDxtPlayer.h */,
-				2086DBB814CE4973B2B397A1 /* VideoDxtPlayerListener.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		9A43DF2CAD70454DA954CC39 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				9559EE9311C248B19AD55AC3 /* VideoDxtDrawer.cpp */,
-				BC189DF2D2B94582B08E96DB /* VideoDxtPlayer.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		3B0A8ED78616483DA0B70B19 /* DXT player */ = {
-			isa = PBXGroup;
-			children = (
-				C00ECF9D7F834CE9A25009F9 /* include */,
-				9A43DF2CAD70454DA954CC39 /* src */,
-			);
-			name = "DXT player";
-			sourceTree = "<group>";
-		};
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-				3B0A8ED78616483DA0B70B19 /* DXT player */,
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +168,34 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B0A8ED78616483DA0B70B19 /* DXT player */ = {
+			isa = PBXGroup;
+			children = (
+				C00ECF9D7F834CE9A25009F9 /* include */,
+				9A43DF2CAD70454DA954CC39 /* src */,
+			);
+			name = "DXT player";
+			sourceTree = "<group>";
+		};
+		9A43DF2CAD70454DA954CC39 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9559EE9311C248B19AD55AC3 /* VideoDxtDrawer.cpp */,
+				BC189DF2D2B94582B08E96DB /* VideoDxtPlayer.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		C00ECF9D7F834CE9A25009F9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				5256C290C3D04096828DC2A2 /* VideoDxtDrawer.h */,
+				AB209C1D87824E6CBA48ADAD /* VideoDxtPlayer.h */,
+				2086DBB814CE4973B2B397A1 /* VideoDxtPlayerListener.h */,
+			);
+			name = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +224,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BasicPlayer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -247,6 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500661681CA2F57300244356 /* shader.vert in Resources */,
+				500661671CA2F57300244356 /* shader.frag in Resources */,
 				8D3D1DB1A1624D8EAE8F904E /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,17 +276,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BasicPlayer_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BasicPlayer_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -303,12 +308,12 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BasicPlayer_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BasicPlayer_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -325,7 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../../../..";
+				CINDER_PATH = ../../../../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				ENABLE_TESTABILITY = YES;
@@ -335,10 +340,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					../../../include,
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../include";
 			};
 			name = Debug;
 		};
@@ -346,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../../../..";
+				CINDER_PATH = ../../../../..;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -354,10 +356,7 @@
 				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					../../../include,
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include ../../../include";
 			};
 			name = Release;
 		};

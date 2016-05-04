@@ -44,6 +44,12 @@ namespace poly {
 			return -4;
 		}
 
+        
+        
+//        mGlsl = gl::GlslProg::create( gl::GlslProg::Format().vertex( loadAsset( "shader.vert" ) )
+//                                       .fragment( loadAsset( "shader.frag" ) ) );
+
+
     
 		mGlsl = gl::getStockShader(gl::ShaderDef().texture().color());
 		mGlsl->bind();
@@ -97,6 +103,8 @@ namespace poly {
 
 
 		mGlsl->bind();
+        
+        
 
 
 		glActiveTexture(GL_TEXTURE0);

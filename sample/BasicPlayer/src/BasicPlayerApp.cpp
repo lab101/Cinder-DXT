@@ -24,8 +24,8 @@ class BasicPlayerApp : public App {
 void BasicPlayerApp::setup()
 {
     
-    if(player.init(ci::app::getAssetPath("/").string() +  "video.dxt5")==0){
-        player.play(24);
+    if(player.init(ci::app::getAssetPath("/").string() +  "bunny.dxt5")==0){
+        player.play(25);
         player.loop();
         setWindowSize(player.getWidth(), player.getHeight());
     }else{
